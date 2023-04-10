@@ -2,6 +2,7 @@ import customtkinter
 import tkinter as tk
 import vlc
 
+# Configuring tkinter frame.
 frame = tk.Tk()
 frame.configure(bg='#212325')
 frame.geometry("700x400")
@@ -14,29 +15,20 @@ VideoFrame.place(relx=0.005, y=0, relwidth=1, relheight=1)
 VFrame = tk.Label(VideoFrame, bg="#2a2d2e")
 VFrame.place(relx=0, rely=0, relheight=.9, relwidth=1)
 
-
 Registratyion = tk.Label(VFrame, text="Add Media", bg="#2a2d2e", fg="gray29", font=("Roboto Medium", -20))
 Registratyion.place(relx=0.0, rely=0, relheight=1, relwidth=1)
 
-video_link="https://movmi.co/wp-content/uploads/2022/10/mov_bbb.mp4"
+video_link="https://movmi.co/wp-content/uploads/2022/10/mov_bbb.mp4" # The link of the online hosted video.
 
 PlayButton = customtkinter.CTkButton(master=VideoFrame, text="Play", command=lambda: AdPlayer.play(video_link),
                                      hover_color="#8B4000" ,fg_color="#EE7600",
                                      corner_radius=0)
 PlayButton.place(relx=0, rely=0.9, relwidth=1, relheight=0.1)
 
-
+# Ad player class.
 class AdPlayer():
 
-    def __init__(self, *args, **kwargs):
-        # Creating VLC player
-        self.iss = 0
-        pass
-
-    def GetHandle(self):
-
-        # Getting frame ID
-        return VFrame.winfo_id()
+    # Creating VLC player
 
     def play(self,video_link):
 
@@ -51,8 +43,6 @@ class AdPlayer():
         VFrame.player.play()
 
 
-
-
-
+# Defining the class.
 AdPlayer=AdPlayer()
 frame.mainloop()
