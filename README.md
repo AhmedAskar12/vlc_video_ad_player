@@ -12,7 +12,7 @@ Using vlc with tkinter and customtkinter modules.
 
 1- Install tkinter, customtkinter, vlc.
 
-```pip install tkinter customtkinter vlc```
+```pip install tk customtkinter vlc```
 
 2- Change the link of the video in video_link variable.
 
